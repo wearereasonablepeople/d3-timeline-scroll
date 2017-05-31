@@ -4,6 +4,6 @@
 node_modules
 .settings
 *.log
-dist/
+lib/
 .idea
 .vscode

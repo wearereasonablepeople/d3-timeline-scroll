@@ -1,46 +1,97 @@
 # D3 timeline scroll
 
-A useful infinite scroll timeline built using D3. 
+A useful infinite scrollable timeline built with D3.
 
----
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Installation](#installation)
   - [Using NPM](#using-npm)
+- [Dependencies](#dependencies)
 - [Usage](#usage)
-  - [General Usage](#general-usage)
+  - [General Usage](#vanilla-javascript)
+  - [Styling](#styling)
   - [Using with Angular](#using-with-angular)
   - [Using with React](#using-with-react)
   
 ---
 
 
+## Demo
+[Demo on JSbin](https://jsbin.com/)
+
 ## Installation
 #### Using NPM
 
-In the same directory where your `package.json` is:
-
 - Run `npm install d3-timeline-scroll --save`
-
 
 ---
 
 
+## Dependencies
+Library depends on [D3](https://d3js.org) in version **3**.
+
+You can pass an instance of d3 as third argument to contructor (By default window.d3 is used)
+
 ## Usage
-### General Usage
+### Vanilla javascript
 
 ```javascript
 const el = document.getElementById('#graph');
 
-const instace = d3Timeline(el, {
-  onScroll: function(e){
-    console.log(e); //current selected date
+const instace = d3ScrollableTimeline(el, {
+  events: [],
+  startdate: new Date(),      // centers timeline at date [default: new Date()]
+  autoresize: true,           // makes timeline responsive [default: true]
+  lineheight: 60,             // height of one category
+  onscroll: function(date){
+    console.log(date);        // currently centered date
   }
-});
+}, d3Instance = window.d3);
 ```
 
-### Using with Angular
+As last parameter you can pass instance of **d3** library. By default lib will use __window.d3__
+
+
+```javascript
+//destroy instance and remove all listeners
+instance.destroy();
+
+//redraw timeline with new set of events;
+instance.update([
+  {
+    label: 'XYZ',
+    items: [
+      {
+        start: new Date('2017-03-16'),
+        end: new Date('2017-03-24'),
+      },
+      {
+        start: new Date('2017-07-22'),
+        end: new Date('2017-08-18'),
+      }
+    ]
+  }
+])
+```
+
+### Styling
+
+Import css file and add **d3-scrollable-timeline** class
+``` html
+<link rel="stylesheet" media="all" href="node_modules/d3-scrollable-timeline/lib/style.css" />
+<div class="d3-scrollable-timeline" id="timeline"></div>
+```
+or via
+#### Sass
+```scss
+$d3-scrollable-color: rgba(0,0,0, 0.8); // define color of timeline
+@import "node_modules/d3-scrollable-timeline/lib/style.scss"
+```
+
+
+### AngularJS
 ```javascript
  //TODO:
 ```

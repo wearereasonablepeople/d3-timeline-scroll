@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" media="all" href="lib/style.css" />
+</head>
+<body>
+  <div>
+    <button id="reset">Reset</button>
+    <button id="destroy">Destroy</button>
+    <button id="set2">Events set 2</button>
+    <button id="set3">Events set 3</button>
+  </div>
+  <div class="d3-scrollable-timeline" id="timeline"></div>
+
+
+  <script src="node_modules/d3/d3.min.js"></script>
+  <script src="lib/d3.js"></script>
+
+
+  <script type="text/javascript">
+    var timeline = null;
+    var el = document.getElementById('timeline');
+
+    var demo = [
+      {
+        label: 'Category 1',
+        items: [
+          {
+            start: new Date('2016-01-12'),
+            end: new Date('2016-02-24'),
+          },
+          {
+            start: new Date('2016-06-05'),
+            end: new Date('2016-07-19'),
+          },
+          {
+            start: new Date('2016-08-12'),
+            end: new Date('2016-08-11'),
+          },
+          {
+            start: new Date('2016-09-11'),
+            end: new Date('2016-09-15'),
+          },
+          {
+            start: new Date('2016-10-11'),
+            end: new Date('2016-10-15'),
+          },
+          {
+            start: new Date('2017-01-07'),
+            end: new Date('2017-01-19'),
+          },
+          {
+            start: new Date('2017-02-01'),
+            end: new Date('2017-02-10'),
+          }
+        ]
+      },
+      {
+        label: 'Ipsum 2',
+        items: [
+          {
+            start: new Date('2016-01-12'),
+            end: new Date('2016-01-16'),
+          },
+          {
+            start: new Date('2016-06-05'),
+            end: new Date('2016-06-09'),
+            tooltip: 'Dentist 08:30'
+          },
+          {
+            start: new Date('2016-11-15'),
+            end: new Date('2016-11-19'),
+            tooltip: 'Dentist 14:00'
+          },
+          {
+            start: new Date('2017-02-20'),
+            end: new Date('2017-02-25'),
+          },
+
+          {
+            start: new Date('2017-04-12'),
+            end: new Date('2017-04-15'),
+          }
+        ]
+      },
+      {
+        label: 'Lorem Category 3',
+        items: [
+          {
+            start: new Date('2015-12-12'),
+            end: new Date('2016-04-01'),
+          },
+          {
+            start: new Date('2016-05-22'),
+            end: new Date('2016-06-29'),
+          },
+          {
+            start: new Date('2017-02-07'),
+            end: new Date('2017-02-09'),
+          },
+          {
+            start: new Date('2017-03-12'),
+            end: new Date('2017-03-15'),
+          },
+          {
+            start: new Date('2017-04-07'),
+            end: new Date('2017-04-11'),
+          }
+        ]
+      },
+      {
+        label: 'Lorem Pixel 4',
+        items: [
+          {
+            start: new Date('2016-03-12'),
+            end: new Date('2016-04-24'),
+          },
+          {
+            start: new Date('2016-05-22'),
+            end: new Date('2016-06-18'),
+          },
+          {
+            start: new Date('2016-10-06'),
+            end: new Date('2016-10-22'),
+          },
+          {
+            start: new Date('2017-02-20'),
+            end: new Date('2017-03-01'),
+          }
+        ]
+      },
+      {
+        label: 'Holy Bacon 5',
+        items: [
+          {
+            start: new Date('2016-07-12'),
+            end: new Date('2016-08-24'),
+          },
+          {
+            start: new Date('2016-10-22'),
+            end: new Date('2016-11-18'),
+          },
+          {
+            start: new Date('2017-01-02'),
+            end: new Date('2017-01-22'),
+          }
+        ]
+      }
+    ];
+
+    var demo2 = [
+      {
+        label: 'Totally new category',
+        items: [
+          {
+            start: new Date('2015-07-12'),
+            end: new Date('2016-08-24'),
+          },
+          {
+            start: new Date('2017-03-22'),
+            end: new Date('2017-08-18'),
+          }
+        ]
+      },
+      {
+        label: 'Timeline category',
+        items: [
+          {
+            start: new Date('2016-03-16'),
+            end: new Date('2016-05-24'),
+          },
+          {
+            start: new Date('2016-07-22'),
+            end: new Date('2017-01-18'),
+          }
+        ]
+      }
+    ];
+
+    var demo3 = [
+      {
+        label: 'Abc',
+        items: [
+          {
+            start: new Date('2016-02-11'),
+            end: new Date('2016-03-16'),
+          },
+          {
+            start: new Date('2015-11-22'),
+            end: new Date('2016-02-18'),
+          }
+        ]
+      },
+      {
+        label: 'CDE',
+        items: [
+          {
+            start: new Date('2016-03-16'),
+            end: new Date('2017-05-24'),
+          },
+          {
+            start: new Date('2017-07-22'),
+            end: new Date('2017-08-18'),
+          }
+        ]
+      },
+      {
+        label: 'XYZ',
+        items: [
+          {
+            start: new Date('2017-03-16'),
+            end: new Date('2017-03-24'),
+          },
+          {
+            start: new Date('2017-07-22'),
+            end: new Date('2017-08-18'),
+          }
+        ]
+      }
+    ];
+
+    var reset = function(){
+      if(timeline) {
+        timeline.destroy();
+      }
+
+      timeline = new d3ScrollableTimeline(el, {
+        events: demo,
+        startdate: new Date('2016-06-01 00:00:00'),
+        lineheight: 40,
+        onscroll: function (e) {
+          console.log(e);
+        }
+      });
+
+    }; reset();
+
+    var destroy = function(){
+      if(timeline) {
+        timeline.destroy();
+      }
+    };
+
+    var set2 = function(){
+       if(timeline) {
+        timeline.update(demo2);
+      }
+    };
+    var set3 = function(){
+       if(timeline) {
+        timeline.update(demo3);
+      }
+    };
+
+    document.getElementById('destroy')
+    .addEventListener('click', destroy);
+
+    document.getElementById('reset')
+    .addEventListener('click', reset);
+
+    document.getElementById('set2')
+    .addEventListener('click', set2);
+
+    document.getElementById('set3')
+    .addEventListener('click', set3);
+
+
+  </script>
+</body>
+
+</html>
