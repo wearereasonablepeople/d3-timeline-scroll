@@ -49,14 +49,6 @@ const instace = d3ScrollableTimeline(el, {
     console.log(date);        // currently centered date
   }
 }, d3Instance = window.d3);
-```
-
-As last parameter you can pass instance of **d3** library. By default lib will use __window.d3__
-
-
-```javascript
-//destroy instance and remove all listeners
-instance.destroy();
 
 //redraw timeline with new set of events;
 instance.update([
@@ -73,7 +65,11 @@ instance.update([
       }
     ]
   }
-])
+]);
+
+//destroy instance and remove all listeners
+instance.destroy();
+
 ```
 
 ### Styling
