@@ -19,7 +19,7 @@ A useful infinite scrollable timeline built with D3.
 
 
 ## Demo
-[Demo on JSbin](https://jsbin.com/)
+[Demo on JSbin](https://jsbin.com/xewobuz/1/edit?html,output)
 
 ## Installation
 #### Using NPM

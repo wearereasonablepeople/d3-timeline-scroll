@@ -1,7 +1,7 @@
 {
   "name": "d3-timeline-scroll",
   "version": "1.0.0",
-  "description": "",
+  "description": "A useful infinite scrollable timeline built with D3",
   "main": "lib/d3.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,11 @@
   "dependencies": {
     "d3": "^3.5.17"
   },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/wearereasonablepeople/d3-timeline-scroll.git"
+  },
+  "homepage": "https://github.com/wearereasonablepeople/d3-timeline-scroll.git",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
