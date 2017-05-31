@@ -79,7 +79,9 @@ Import css file and add **d3-scrollable-timeline** class
 <link rel="stylesheet" media="all" href="node_modules/d3-scrollable-timeline/lib/style.css" />
 <div class="d3-scrollable-timeline" id="timeline"></div>
 ```
+
 or via
+
 #### Sass
 ```scss
 $d3-scrollable-color: rgba(0,0,0, 0.8); // define color of timeline
