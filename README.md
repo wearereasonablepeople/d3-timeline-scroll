@@ -19,7 +19,7 @@ A useful infinite scrollable timeline built with D3.
 
 
 ## Demo
-[Demo on JSbin](https://jsbin.com/xewobuz/1/edit?html,output)
+[JSbin](https://jsbin.com/xewobuz/1/edit?html,output) [CodePen](https://codepen.io/piotr-gawlowski/pen/QgeKaX?editors=1010)
 
 ## Installation
 #### Using NPM
@@ -38,7 +38,7 @@ You can pass an instance of d3 as third argument to contructor (By default windo
 ### Vanilla javascript
 
 ```javascript
-const el = document.getElementById('#graph');
+const el = document.getElementById('#timeline');
 
 const instace = d3ScrollableTimeline(el, {
   events: [],
