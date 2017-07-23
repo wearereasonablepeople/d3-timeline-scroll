@@ -1,9 +1,3 @@
-.DS_Store
-.tmp
-.git
-node_modules
-.settings
+/node_modules
 *.log
-lib/
-.idea
-.vscode
+/dist
