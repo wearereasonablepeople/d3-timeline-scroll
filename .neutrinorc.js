@@ -8,7 +8,8 @@ module.exports = {
       production: {
         use: [
           'neutrino-preset-component',
-          'neutrino-middleware-sass'
+          'neutrino-middleware-sass',
+          'neutrino-middleware-minify'
         ],
       },
       development: {

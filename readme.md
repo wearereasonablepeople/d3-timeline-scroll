@@ -38,7 +38,7 @@ $ npm start
 
 ## Usage
 
-> See [examples]('./examples') as well
+> See [examples](./examples) as well
 
 ```javascript
 import d3 from 'd3';

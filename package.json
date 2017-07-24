@@ -27,6 +27,7 @@
     "eslint-config-warp": "^2.1.0",
     "neutrino": "^6.1.4",
     "neutrino-middleware-sass": "0.0.1",
+    "neutrino-middleware-minify": "^6.1.4",
     "neutrino-preset-component": "0.0.1",
     "neutrino-preset-web": "^6.1.4",
     "stylefmt": "^6.0.0",

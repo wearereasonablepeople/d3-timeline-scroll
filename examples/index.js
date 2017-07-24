@@ -234,13 +234,13 @@ const reset = function(){
 
 }; reset();
 
-const pop = function(){
-   if(timeline) {
+const pop = function() {
+  if(timeline) {
     timeline.update(dogs);
   }
 };
-const drop = function(){
-   if(timeline) {
+const drop = function() {
+  if(timeline) {
     timeline.update(Adriano);
   }
 };
