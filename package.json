@@ -1,6 +1,6 @@
 {
   "name": "d3-timeline-scroll",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A useful infinite scrollable timeline built with D3",
   "main": "dist/index.js",
   "scripts": {
