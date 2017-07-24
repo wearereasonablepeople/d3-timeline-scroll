@@ -1,0 +1,9 @@
+{
+  "extends": ["warp"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  }
+}

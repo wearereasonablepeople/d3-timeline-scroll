@@ -1,21 +1,28 @@
-$d3-scrollable-color: rgba(0,0,0, 0.8) !default;
+$d3-scrollable-color: rgba(0, 0, 0, 0.8) !default;
 
 .d3-scrollable-timeline {
   display: block;
 
   svg {
     transition: height 0.7s ease;
+
     .axis text {
       font: 12px sans-serif;
       fill: $d3-scrollable-color;
     }
-    .ticks text, .ticks path, .axis path {
+
+    .ticks text,
+    .ticks path,
+    .axis path {
       display: none;
     }
-    .ticks, .axis {
+
+    .ticks,
+    .axis {
       text {
         user-select: none;
       }
+
       line {
         fill: none;
         stroke: $d3-scrollable-color;
@@ -32,23 +39,29 @@ $d3-scrollable-color: rgba(0,0,0, 0.8) !default;
     }
 
     .category {
-      .line, .indicator {
+      .line,
+      .indicator {
         fill: none;
         stroke: transparentize($d3-scrollable-color, 0.3);
         shape-rendering: crispEdges;
         stroke-width: 2px;
       }
+
       .indicator {
         stroke-width: 4px;
         stroke: $d3-scrollable-color;
         transition: all 0.2s ease;
       }
+
       .label {
         font: 12px sans-serif;
         fill: $d3-scrollable-color;
       }
     }
-    .category, .ticks, .axis {
+
+    .category,
+    .ticks,
+    .axis {
       transition: all 0.2s ease;
     }
   }
