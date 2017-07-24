@@ -1,5 +1,5 @@
 
-# D3 timeline scroll
+# D3 timeline scroll [![Build Status](https://travis-ci.org/wearereasonablepeople/d3-timeline-scroll.svg?branch=master)](https://travis-ci.org/wearereasonablepeople/d3-timeline-scroll)
 
 > A useful infinite scrollable timeline built with D3.
 
